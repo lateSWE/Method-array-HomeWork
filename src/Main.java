@@ -15,9 +15,10 @@ public class Main {
         System.out.println(NameBegginingWithL(names));
         System.out.println(Names5Long(names));
         System.out.println(IndexOfEachNumber(numbers));
+        System.out.println(UniqueNames(names));
     }
 
-    public static int NoOf7(int[]numbers){
+    public static int NoOf7(int[]numbers){                  //1
         int out = 0;
         for (int i = numbers.length - 1; i >= 0; i--){
             if (numbers[i] == 7) {
@@ -26,16 +27,16 @@ public class Main {
         }
         return out;
     }
-    public static int NoOfTom(String[]names){
+    public static int NoOfTom(String[]names){               //2
         int out = 0;
         for (int i = names.length - 1; i >= 0; i--){
-            if (names[i] == "Tom" || names[i] == "tom" ){
+            if (names[i].equals("Tom") || names[i].equals("tom") ){
                 out++;
             }
         }
         return out;
     }
-    public static String MaxAndMinAmount(int[]numbers){
+    public static String MaxAndMinAmount(int[]numbers){     //3
         String out = "";
         int outnum1 = 0;
         int outnum2 = 0;
@@ -68,16 +69,16 @@ public class Main {
         out = numbers[outnum1] + ", " + numbers[outnum2];
         return out;
     }
-    public static int Drusilla(String[]names){
+    public static int Drusilla(String[]names){              //4
         int out = 0;
         for (int i = 0; i < names.length; i++) {
-            if (names[i] == "Drusilla") {
+            if (names[i].equals("Drusilla")){
                 out = i;
             }
         }
         return out;
     }
-    public static int SumOfAllEvenNumbers(int[]numbers){
+    public static int SumOfAllEvenNumbers(int[]numbers){    //5
         int out = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0){
@@ -87,7 +88,7 @@ public class Main {
 
         return out;
     }
-    public static int NameBegginingWithL(String[]names){
+    public static int NameBegginingWithL(String[]names){    //6
         int out = 0;
         for (int i = 0; i < names.length; i++) {
             if (names[i].charAt(0) == 'L'){
@@ -96,7 +97,7 @@ public class Main {
         }
         return  out;
     }
-    public static int Names5Long(String[]names){
+    public static int Names5Long(String[]names){            //7
         int out = 0;
         for (int i = 0; i < names.length; i++) {
             if (names[i].length() == 5){
@@ -107,7 +108,7 @@ public class Main {
     }
 
 
-    public static String IndexOfEachNumber(int[]numbers){
+    public static String IndexOfEachNumber(int[]numbers){   //8
         String out = "";
         int[] index = new int[10];
 
@@ -121,11 +122,30 @@ public class Main {
         }
         return out;
     }
-    public static int UniqueNames(String[]names){
+    public static int UniqueNames(String[]names) {           //9
         int out = 0;
-        for (int i = 0; i < names.length; i++) {
+        int tims = names.length;
+        String text;
+        for (int i = 0; i < tims; i++) {
+            text = names[i];
+            for (int j = 0; j < tims; j++) {
+                if (i != j) {
+                    if (text.equals(names[j])) {
+                        break;
+                    }
+                    if (j == tims - 1) {
+                        out++;
+                    }
+                }
 
+
+            }
         }
+        return out;
+    }
+    public static String MostCommonName(String[]names) {    //10
+        String out = "";
+
         return out;
     }
 }

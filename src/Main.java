@@ -16,6 +16,7 @@ public class Main {
         System.out.println(Names5Long(names));
         System.out.println(IndexOfEachNumber(numbers));
         System.out.println(UniqueNames(names));
+        System.out.println(MostCommonName(names));
     }
 
     public static int NoOf7(int[]numbers){                  //1
@@ -124,16 +125,16 @@ public class Main {
     }
     public static int UniqueNames(String[]names) {           //9
         int out = 0;
-        int tims = names.length;
+        int times = names.length;
         String text;
-        for (int i = 0; i < tims; i++) {
+        for (int i = 0; i < times; i++) {
             text = names[i];
-            for (int j = 0; j < tims; j++) {
+            for (int j = 0; j < times; j++) {
                 if (i != j) {
                     if (text.equals(names[j])) {
                         break;
                     }
-                    if (j == tims - 1) {
+                    if (j == times - 1) {
                         out++;
                     }
                 }
@@ -145,7 +146,25 @@ public class Main {
     }
     public static String MostCommonName(String[]names) {    //10
         String out = "";
-        
+        int outnum = 0;
+        String string1 = "";
+        String string2 = "";
+        int index1 = 0;
+        int index2 = 0;
+        int index3 = names.length;
+
+
+        for (int i = 0; i < index3 - 1; i++) {
+            string1 = names[i];
+            string2 = names[i + 1];
+            for (int j = 0; j < index3; j++) {
+                if (index3 >= index2){
+                    outnum = i;
+                }
+            }
+
+        }
+        out = names[outnum];
         return out;
     }
 }
